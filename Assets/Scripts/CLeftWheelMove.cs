@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class CLeftWheelMove : CMove
 {
-    public override float Move()
+    public override Vector3 Move(Vector3 frontDirection)
     {
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            return 2.0f * Time.deltaTime;
-        }
-        return 0.0f;
+        float force = 0.0f;
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+            force = m_MagnitudeOfForce;
+        if (Input.GetKeyDown(KeyCode.A))
+            force = -m_MagnitudeOfForce;
+        return frontDirection * force;
     }
 }
