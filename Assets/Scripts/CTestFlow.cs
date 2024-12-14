@@ -30,9 +30,10 @@ public class CTestFlow : MonoBehaviour
     {
         if (movementController != null && guidePrefab != null)
         {
-            // 목표 지점에 도달하면 안내 메시지 생성 및 이동 멈추기
+            // 목표 지점과의 거리 차이가 stopDistance 이하일 때
             if (Vector3.Distance(transform.position, targetPosition.position) < stopDistance)
             {
+                // guideInstance가 없으면 새로운 guidePrefab 인스턴스를 생성
                 if (guideInstance == null)
                 {
                     guideInstance = Instantiate(guidePrefab, transform.position + new Vector3(0, 2, 0), Quaternion.Euler(90f, 0f, 0f));
@@ -41,7 +42,6 @@ public class CTestFlow : MonoBehaviour
                 // movementController의 위치를 이 스크립트가 부착된 오브젝트의 앞쪽으로 이동
                 movementController.transform.position = transform.position + transform.forward * guideOffset;
 
-                // movementController가 이 스크립트가 부착된 오브젝트를 바라보게 설정
                 movementController.transform.LookAt(transform);
 
                 // Rigidbody의 velocity를 0으로 설정하여 이동 멈추기
@@ -52,13 +52,13 @@ public class CTestFlow : MonoBehaviour
                 }
 
                 movementController.SetCanMove(false);  // 이동 불가 설정
-            }
 
-            if (!movementController.canMove && Input.GetKeyDown(KeyCode.Q))
-            {
-                movementController.SetCanMove(true);
-                Destroy(guideInstance);
-                Destroy(this.gameObject);
+                if (!movementController.canMove && Input.GetKeyDown(KeyCode.Q))
+                {
+                    movementController.SetCanMove(true);
+                    Destroy(guideInstance);
+                    Destroy(gameObject);
+                }
             }
         }
     }
