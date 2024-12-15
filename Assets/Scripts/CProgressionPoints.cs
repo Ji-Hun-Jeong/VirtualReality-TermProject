@@ -10,7 +10,7 @@ public class CProgressionPoints : MonoBehaviour
     public float guideOffset = 2.0f;
 
     private GameObject guideInstance;
-    public CTestMoving movementController;
+    public CMoveObject movementController;
 
     void Start()
     {
