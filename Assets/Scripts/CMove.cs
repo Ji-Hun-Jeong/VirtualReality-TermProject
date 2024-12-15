@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class CMove : MonoBehaviour
 {
-    public abstract Vector3 Move(Vector3 frontDirection);
+    public abstract float Move();
 
-    protected float m_MagnitudeOfForce = 5.0f;
+    public float m_MagnitudeOfForce = 10.0f;
 }
