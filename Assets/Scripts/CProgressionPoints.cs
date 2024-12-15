@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CProgressionPoints : MonoBehaviour
 {
-    public Transform targetPosition;
+    public GameObject targetPrefab1;
+    public GameObject targetPrefab2;
     public GameObject guidePrefab;
     public float stopDistance = 3.0f;
     public float guideOffset = 2.0f;
@@ -20,16 +21,18 @@ public class CProgressionPoints : MonoBehaviour
     {
         if (movementController != null && guidePrefab != null)
         {
-            if (Vector3.Distance(transform.position, targetPosition.position) < stopDistance)
+            if (Vector3.Distance(transform.position, movementController.transform.position) < stopDistance)
             {
                 if (guideInstance == null)
                 {
                     guideInstance = Instantiate(guidePrefab, transform.position + new Vector3(0, 2, 0), Quaternion.Euler(90f, 0f, 0f));
                 }
 
-                movementController.transform.position = transform.position + transform.forward * guideOffset;
+                targetPrefab1.transform.position = transform.position + transform.forward * guideOffset;
+                targetPrefab1.transform.LookAt(transform);
 
-                movementController.transform.LookAt(transform);
+                targetPrefab2.transform.position = transform.position + transform.forward * guideOffset;
+                targetPrefab2.transform.LookAt(transform);
 
                 Rigidbody rb = movementController.GetComponent<Rigidbody>();
                 if (rb != null)
@@ -39,7 +42,7 @@ public class CProgressionPoints : MonoBehaviour
 
                 movementController.SetCanMove(false);
 
-                if (!movementController.canMove && OVRInput.Get(OVRInput.Button.Three))
+                if (!movementController.canMove && (OVRInput.Get(OVRInput.Button.Three) || Input.GetKeyDown(KeyCode.Q)))
                 {
                     movementController.SetCanMove(true);
                     Destroy(guideInstance);
