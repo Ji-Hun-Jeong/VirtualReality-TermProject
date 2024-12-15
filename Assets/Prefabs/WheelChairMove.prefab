@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 2456586763165520415}
   - component: {fileID: 5894977196611257859}
   - component: {fileID: 2118398692609114490}
-  - component: {fileID: 3831942455574538532}
+  - component: {fileID: 214185515406254697}
   m_Layer: 0
   m_Name: WheelConnector
   m_TagString: Untagged
@@ -220,29 +220,33 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &3831942455574538532
-CapsuleCollider:
+--- !u!54 &214185515406254697
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3590578441404617164}
-  m_Material: {fileID: 0}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5106527099430938946
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,8 +405,9 @@ MonoBehaviour:
   m_FrontPointer: {fileID: 8053851263169396633, guid: 1e729e1bcd027724192527be3a0a6af5, type: 3}
   m_LeftAxisLocation: {fileID: 1402230825776930527}
   m_RightAxisLocation: {fileID: 5587498497708442909}
-  m_LeftForce: 0
-  m_RightForce: 0
+  m_LeftForce: {x: 0, y: 0, z: 0}
+  m_RightForce: {x: 0, y: 0, z: 0}
+  m_SumOfForce: {x: 0, y: 0, z: 0}
 --- !u!54 &2986494112333708717
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -9,9 +9,9 @@ public class CRightWheelMove : CMove
     public override Vector3 Move(Vector3 frontDirection) 
     {
         float force = 0.0f;
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow))
             force = m_MagnitudeOfForce;
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
             force = -m_MagnitudeOfForce;
         return frontDirection * force;
     }
