@@ -6,13 +6,13 @@ public class CRightWheelMove : CMove
 {
     // Start is called before the first frame update
 
-    public override Vector3 Move(Vector3 frontDirection) 
+    public override float Move() 
     {
         float force = 0.0f;
         if (Input.GetKey(KeyCode.RightArrow))
             force = m_MagnitudeOfForce;
         if (Input.GetKey(KeyCode.D))
             force = -m_MagnitudeOfForce;
-        return frontDirection * force;
+        return force;
     }
 }
