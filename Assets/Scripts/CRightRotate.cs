@@ -6,7 +6,7 @@ public class CRightRotate : CRotate
 {
     public override void Rotate(Transform transform)
     {
-        if (Input.GetKeyDown(KeyCode.E))
-            transform.Rotate(Vector3.up, 90, Space.World);
+        if (Input.GetKey(KeyCode.E))
+            transform.Rotate(Vector3.up, m_RotationForce * Time.deltaTime, Space.World);
     }
 }

@@ -19,5 +19,5 @@ public class CRightControllerRotate : CRotate
     }
 
     public CControllerMove m_ControllerMove = null;
-    public float m_RotationForce = 50.0f;
+
 }
