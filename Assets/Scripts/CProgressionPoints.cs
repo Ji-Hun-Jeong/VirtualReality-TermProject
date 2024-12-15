@@ -39,7 +39,7 @@ public class CProgressionPoints : MonoBehaviour
 
                 movementController.SetCanMove(false);
 
-                if (!movementController.canMove && Input.GetKeyDown(KeyCode.Q))
+                if (!movementController.canMove && OVRInput.Get(OVRInput.Button.Three))
                 {
                     movementController.SetCanMove(true);
                     Destroy(guideInstance);
