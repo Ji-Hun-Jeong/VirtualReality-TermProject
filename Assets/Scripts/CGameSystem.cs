@@ -14,5 +14,5 @@ public class CGameSystem : MonoBehaviour
 
     public CPlayer m_Player = null;
 
-    private int m_ObjectCountOfComplete = 4;
+    private int m_ObjectCountOfComplete = 5;
 }

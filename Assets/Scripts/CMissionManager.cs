@@ -12,7 +12,7 @@ public class CMissionManager : MonoBehaviour
     public CCompletePoint cp;
 
     private string[] itemNames = { "프링글스", "콜라", "사과" };
-    private int itemCount = 5;
+    public int itemCount = 5;
     private string currentItemName;
 
     void Start()
@@ -21,22 +21,6 @@ public class CMissionManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R) && missionFlag)
-        {
-            if (itemCount > 0)
-            {
-                SetNewItemName();
-                UpdateUI();
-                itemCount--;
-            }
-            else if (itemCount == 0)
-            {
-                currentItemName = "카운터로 돌아오세요";
-                UpdateUI();
-
-                cp.starting();
-            }
-        }
     }
 
     void SetNewItemName()
@@ -66,5 +50,24 @@ public class CMissionManager : MonoBehaviour
         guideText2.text = "";
         itemCountText.text = "";
         itemNameText.text = "";
+    }
+
+    public void missionNext() {
+        if (missionFlag)
+        {
+            if (itemCount > 0)
+            {
+                SetNewItemName();
+                UpdateUI();
+                itemCount--;
+            }
+            else if (itemCount == 0)
+            {
+                currentItemName = "카운터로 돌아오세요";
+                UpdateUI();
+
+                cp.starting();
+            }
+        }
     }
 }

@@ -14610,6 +14610,10 @@ PrefabInstance:
       propertyPath: m_RightWheelMove
       value: 
       objectReference: {fileID: 2039824665}
+    - target: {fileID: 5058072468199191818, guid: b4ecacb57cbf3054dad092322b2bdf1b, type: 3}
+      propertyPath: MissionManager
+      value: 
+      objectReference: {fileID: 740090807}
     - target: {fileID: 6347498806117170781, guid: b4ecacb57cbf3054dad092322b2bdf1b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.25
@@ -16380,6 +16384,7 @@ MonoBehaviour:
   itemNameText: {fileID: 1461091425}
   missionFlag: 0
   cp: {fileID: 28508852}
+  itemCount: 5
 --- !u!1001 &741712712
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41288,7 +41293,7 @@ Canvas:
   m_GameObject: {fileID: 1763530234}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0

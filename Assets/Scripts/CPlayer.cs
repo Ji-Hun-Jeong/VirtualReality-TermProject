@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CPlayer : MonoBehaviour
 {
+    public CMissionManager MissionManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,8 +18,11 @@ public class CPlayer : MonoBehaviour
         
     }
 
-    public void IncreaseScore() { m_Score += 1; Debug.Log(m_Score); }
-    public int GetScore() { return m_Score; }
+    public void IncreaseScore() { 
+        m_Score += 1;
+        MissionManager.missionNext();
+    }
+    public int GetScore() { return MissionManager.itemCount; }
 
     public int m_Score = 0;
 }
