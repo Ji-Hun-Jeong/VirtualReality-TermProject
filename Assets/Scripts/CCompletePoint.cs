@@ -13,6 +13,8 @@ public class CCompletePoint : MonoBehaviour
     private GameObject guideInstance;
     public CMoveObject movementController;
     public CMissionManager cMissionManager;
+    public CEndingPoint endingPoint;
+    public GameObject resultBox;
 
     void Start()
     {
@@ -49,6 +51,13 @@ public class CCompletePoint : MonoBehaviour
                 if (!movementController.canMove && (OVRInput.Get(OVRInput.Button.Three) || Input.GetKeyDown(KeyCode.Q)))
                 {
                     movementController.SetCanMove(true);
+                    endingPoint.starting();
+
+                    if (resultBox != null)
+                    {
+                        resultBox.gameObject.SetActive(true);
+                    }
+
                     Destroy(guideInstance);
                     Destroy(gameObject);
                 }
