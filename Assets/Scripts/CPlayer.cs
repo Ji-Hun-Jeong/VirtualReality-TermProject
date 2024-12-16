@@ -19,5 +19,5 @@ public class CPlayer : MonoBehaviour
     public void IncreaseScore() { m_Score += 1; Debug.Log(m_Score); }
     public int GetScore() { return m_Score; }
 
-    private int m_Score = 0;
+    public int m_Score = 0;
 }
