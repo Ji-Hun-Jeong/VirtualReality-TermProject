@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CProgressionPoints : MonoBehaviour
+public class CCompletePoint : MonoBehaviour
 {
     public GameObject targetPrefab1;
     public GameObject targetPrefab2;
@@ -12,11 +12,11 @@ public class CProgressionPoints : MonoBehaviour
 
     private GameObject guideInstance;
     public CMoveObject movementController;
-
-    public CMissionManager missionManager;
+    public CMissionManager cMissionManager;
 
     void Start()
     {
+        gameObject.SetActive(false);
     }
 
     void Update()
@@ -25,6 +25,8 @@ public class CProgressionPoints : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, movementController.transform.position) < stopDistance)
             {
+                cMissionManager.InitText();
+
                 if (guideInstance == null)
                 {
                     guideInstance = Instantiate(guidePrefab, transform.position + new Vector3(0, 2, 0), transform.rotation * Quaternion.Euler(90f, 0f, 0f));
@@ -46,16 +48,16 @@ public class CProgressionPoints : MonoBehaviour
 
                 if (!movementController.canMove && (OVRInput.Get(OVRInput.Button.Three) || Input.GetKeyDown(KeyCode.Q)))
                 {
-                    if (missionManager != null)
-                    {
-                        missionManager.SetMissionFlag(true);
-                    }
-
                     movementController.SetCanMove(true);
                     Destroy(guideInstance);
                     Destroy(gameObject);
                 }
             }
         }
+    }
+
+    public void starting()
+    {
+        gameObject.SetActive(true);
     }
 }
