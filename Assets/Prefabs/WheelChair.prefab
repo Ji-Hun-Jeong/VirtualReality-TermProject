@@ -132,8 +132,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c64057664904a0e46b74940f81fad172, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LeftRotate: {fileID: 5505948329628599515}
-  m_RightRotate: {fileID: 2068909152724640302}
+  m_LeftRotate: {fileID: 3577425653587786303}
+  m_RightRotate: {fileID: 4148147111453437276}
   m_RotateObject: {fileID: 1590983630985934965}
 --- !u!1 &1486212089239267875
 GameObject:
@@ -179,8 +179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117fe746cbbbcc74f9cb65bf75a824a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ControllerMove: {fileID: 380019917129257096}
   m_RotationForce: 50
+  m_ControllerMove: {fileID: 380019917129257096}
 --- !u!1 &1534808784827811323
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,6 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2650724ea6ec9dd498d9b91a621c1abf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_RotationForce: 50
 --- !u!1 &1590983630985934965
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,12 +304,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f8964006d6edc4c9b8283015ffa10e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LeftWheelMove: {fileID: 5816520889121661730}
-  m_RightWheelMove: {fileID: 380019917129257096}
+  m_LeftWheelMove: {fileID: 7950450549808894271}
+  m_RightWheelMove: {fileID: 3977263126627070113}
   m_LeftForce: 0
   m_RightForce: 0
   m_SumOfForce: 0
   m_MoveObject: {fileID: 746789987667078963}
+  canMove: 1
 --- !u!1 &3866437144263516440
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,6 +510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ad0c93ae0fabe04eac05c794b150556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_RotationForce: 50
 --- !u!1 &6590030010864494093
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,8 +555,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c3fcc74d11e06b4f8aa9abf84028971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ControllerMove: {fileID: 5816520889121661730}
   m_RotationForce: 50
+  m_ControllerMove: {fileID: 5816520889121661730}
 --- !u!1 &7583384784164877160
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,6 +810,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6347498806117170781}
+  - component: {fileID: 5058072468199191818}
   m_Layer: 0
   m_Name: WheelChair
   m_TagString: Untagged
@@ -831,6 +835,18 @@ Transform:
   - {fileID: 3953291212450385785}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5058072468199191818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8925697697252704214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e287e15179784c41ac5468f77512106, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &431686578495967995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -839,6 +855,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3529033551065823839}
     m_Modifications:
+    - target: {fileID: 108157274428331697, guid: d2e8c4942af99c143a3f6e55a6c91c7f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.145
+      objectReference: {fileID: 0}
+    - target: {fileID: 108157274428331697, guid: d2e8c4942af99c143a3f6e55a6c91c7f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 1096704690048744097, guid: d2e8c4942af99c143a3f6e55a6c91c7f, type: 3}
       propertyPath: instanceId
       value: dec42044-3e73-451a-be37-87800a436a26
@@ -918,6 +942,10 @@ PrefabInstance:
     - target: {fileID: 6724611954176816140, guid: d2e8c4942af99c143a3f6e55a6c91c7f, type: 3}
       propertyPath: instanceId
       value: 73b214bb-b08a-4ba6-be3f-1718ce21ae1a
+      objectReference: {fileID: 0}
+    - target: {fileID: 6750021043695681326, guid: d2e8c4942af99c143a3f6e55a6c91c7f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6767271881129462354, guid: d2e8c4942af99c143a3f6e55a6c91c7f, type: 3}
       propertyPath: instanceId
