@@ -31,7 +31,7 @@ public class CMissionManager : MonoBehaviour
 
     void UpdateUI()
     {
-        guideText1.text = "R을 눌러 물건 집기";
+        guideText1.text = "X를 눌러 물건 집기";
         guideText2.text = "물건을 가져오세요: ";
         itemCountText.text = itemCount.ToString();
         itemNameText.text = currentItemName;

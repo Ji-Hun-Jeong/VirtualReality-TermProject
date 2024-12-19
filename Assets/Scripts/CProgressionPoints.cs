@@ -27,7 +27,7 @@ public class CProgressionPoints : MonoBehaviour
             {
                 if (guideInstance == null)
                 {
-                    guideInstance = Instantiate(guidePrefab, transform.position + new Vector3(0, 2, 0), transform.rotation * Quaternion.Euler(90f, 0f, 0f));
+                    guideInstance = Instantiate(guidePrefab, transform.position + new Vector3(0, 1, 0), transform.rotation * Quaternion.Euler(90f, 0f, 0f));
                 }
 
                 targetPrefab1.transform.position = transform.position + transform.forward * guideOffset;
