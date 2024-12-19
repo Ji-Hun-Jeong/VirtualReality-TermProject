@@ -48,7 +48,7 @@ public class CCompletePoint : MonoBehaviour
 
                 movementController.SetCanMove(false);
 
-                if (!movementController.canMove && (OVRInput.Get(OVRInput.Button.Three) || Input.GetKeyDown(KeyCode.Q)))
+                if (!movementController.canMove && (OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) || Input.GetKeyDown(KeyCode.Q)))
                 {
                     movementController.SetCanMove(true);
                     endingPoint.starting();
