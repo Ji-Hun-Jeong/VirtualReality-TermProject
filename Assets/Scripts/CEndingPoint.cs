@@ -20,7 +20,7 @@ public class CEndingPoint : MonoBehaviour
         if (Vector3.Distance(transform.position, movementController.transform.position) < stopDistance)
         {
             hasTriggered = true;
-            ShowMessage("고생하셨습니다!!");
+            ShowMessage("고생하셨습니다!!　10초뒤에 게임이 종료됩니다");
         }
     }
     void ShowMessage(string message)
@@ -28,7 +28,7 @@ public class CEndingPoint : MonoBehaviour
         if (messageText != null)
         {
             messageText.text = message;
-            StartCoroutine(ClearMessageAfterDelay(5f));
+            StartCoroutine(ClearMessageAfterDelay(10f));
         }
     }
 
@@ -38,6 +38,7 @@ public class CEndingPoint : MonoBehaviour
         if (messageText != null)
         {
             messageText.text = "";
+            Application.Quit();
         }
     }
 

@@ -11,7 +11,6 @@ public class CMissionManager : MonoBehaviour
     public bool missionFlag = false;
     public CCompletePoint cp;
 
-    private string[] itemNames = { "프링글스", "콜라", "사과" };
     public int itemCount = 5;
     private string currentItemName;
 
@@ -23,15 +22,9 @@ public class CMissionManager : MonoBehaviour
     {
     }
 
-    void SetNewItemName()
-    {
-        int randomIndex = Random.Range(0, itemNames.Length);
-        currentItemName = itemNames[randomIndex];
-    }
-
     void UpdateUI()
     {
-        guideText1.text = "X를 눌러 물건 집기";
+        guideText1.text = "중지 버튼을 눌러서 물건집기";
         guideText2.text = "물건을 가져오세요: ";
         itemCountText.text = itemCount.ToString();
         itemNameText.text = currentItemName;
@@ -39,7 +32,6 @@ public class CMissionManager : MonoBehaviour
 
     public void SetMissionFlag(bool flag) { 
         missionFlag = flag;
-        SetNewItemName();
         UpdateUI();
         itemCount--;
     }
@@ -57,7 +49,6 @@ public class CMissionManager : MonoBehaviour
         {
             if (itemCount > 0)
             {
-                SetNewItemName();
                 UpdateUI();
                 itemCount--;
             }
